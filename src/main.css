@@ -1,0 +1,98 @@
+#main_title {
+    text-align: center;
+    background-color: #110B11;
+    color: #ffbd00;
+}
+
+#banner {
+    width: 100%;
+    height: auto;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+body main h3 {
+    color: #1b5299;
+}
+
+.about_me {
+    background-color: #931f1d;
+    padding: 4px;
+}
+
+.about_website {
+    background-color: #931f1d;
+    padding: 4px;
+}
+
+.skills {
+    background-color: #4d8b31;
+    padding: 4px;
+}
+
+footer {
+    background-color: #1b5299;
+}
+
+.navbar {
+    list-style-type: none;
+    color: #F7FFF7;
+    background: #133a6d;
+    text-decoration: none;
+    padding: 8px;
+    border-style: solid;
+    border-width: 1px;
+    border-color: #110B11;
+}
+
+.main_nav_button {
+    display: inline;
+    float: left;
+    width: 75px;
+    border-style: solid;
+    border-width: 1px;
+    border-color: #110B11;
+    margin-top: 0px;
+}
+
+.nav_button {
+    top: 0;
+}
+
+ul li ul li {
+    display: none;
+}
+
+ul li:hover ul li{
+    display: block;
+}
+
+a {
+    color: #F7FFF7;
+    background: #1b5299;
+    padding: 8px;
+    text-decoration: none;
+    text-align: center;
+}
+
+a.inline{
+    border-radius: 4px;
+}
+
+a:link {
+    color: #110B11;
+}
+
+a:visited {
+    color: #110B11;
+}
+
+a:active {
+    color: #1b5299;
+}
+
+a:hover {
+    background: rgba(27, 82,153, 80%);
+    color: #110b11c9;
+}

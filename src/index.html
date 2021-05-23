@@ -9,74 +9,98 @@
 
         <meta name="application-name" content="Ahmad Adam Website">
 
-        <link href="main.css" rel="stylesheet">
-        <link rel="icon" href="/images/favicon.ico">
+        <link href="/main.css" rel="stylesheet">
+        <link rel="icon" href="/images/faviconv2.ico">
+        <link rel="apple-touch-icon" href="/images/favicon.ico">
 
 
-        <title> Ahmad Adam: Home </title>  
+        <title> Ahmad Adam - Software Engineer Student: Home </title>  
     </head>  
 
     <body>
-        <h1 class="heading"> Ahmad Adam </h1>
-
-        <img src="/images/Banner-1920-1080.png" alt="Banner image" width="480" height="270"
-            srcset="/images/Banner-480-270.png 480w,
-                    /images/Banner-960-540.png 960w,
-                    /images/Banner-1440-810.png 1440w,
-                    /images/Banner-1920-1080.png 1920w"
-            sizes="(max-width:480px) 270px,
-                    (max-width:960px) 540px,
-                    (max-width:1440px) 810px,
-                    (max-width:1920px) 1080px">
-
-
-        <p> Welcome to my website </p>
 
         <header>
             <nav role="navigation" aria-label="main menu"> 
                 <ul class="navbar"> 
 
-                    <li> <a href="/"> Home </a> </li>
-                    <li> <h4> <a href="/videos/"> Videos </a> </h4>
+                    <li> <a href="/" class="main_nav_button"> Home </a> </li>
+                    <li> <h4> <a href="/videos/" class="main_nav_button"> Videos </a> </h4>
                         <ul> 
                             <li> </li>
-                            <li> Integrated Engineering Advertisement video</li>
+                            <li class="nav_button"> Integrated Engineering Advertisement video</li>
+                            <li class="nav_button"> Story of Islam Retreat video </li>
                         </ul></li>
-                    <li> <h4> <a href="/games/"> Games </a> </h4>
+                    <li> <h4> <a href="/games/" class="main_nav_button"> Games </a> </h4>
                         <ul> 
-                            <li> Good Deed Game </li>
-                            <li> Atomic Collisions: Unity Simulation </li>
+                            <li class="nav_button"> Good Deed Game </li>
+                            <li class="nav_button"> Atomic Collisions: Unity Simulation </li>
                         </ul> </li>
-                    <li> <h4> <a href="/software/"> Software </a> </h4> 
+                    <li> <h4> <a href="/software/" class="main_nav_button"> Software </a> </h4> 
                         <ul> 
                         
                         </ul> </li>
                 </ul>
             </nav> 
+
+            <span id="main_title">
+                <h3> Hey, I'm </h3>
+                <h1> Ahmad Adam </h1>
+            </span>
+            <img src = "images/Banner.png" id="banner" alt="Banner image">
         </header>
 
         <main>
-            <h3> About me </h3>
-            <p> 
-                Ahmad Adam is a first year Software Engineering student in the University of Sydney.
-            </p>
 
-            <h3> About this website </h3>
-            <p> 
-                This website was intially built from scratch using just html on the 14<sup>th</sup> of December 2020. 
-                The first 4 pages were put together only using VSCode as the code editor. The initial purpose of the website was to
-                practice HTML, CSS and JavaScript coding as well as showcase my works over the years.
-            </p>
+            <span id="short_intro"> 
+                <h1> Who? </h1>
+                <p> I'm a second year Software Engineering student.  </p>
+            </span>
 
-            <h3> These are some of my technical skills: </h3>
-            <ul> 
-                <li> Python </li>
-                <li> Java </li>
-                <li> C# </li>
-                <li> Html </li>
-                <li> Css </li>
-                <li> JavaScript </li>
-            </ul>
+            <section id="profile">
+                
+
+                <div id="about_me">
+                    <h3> About me </h3>
+                    <p class="about_text"> 
+                        Currently a student at the University of Sydney, Australia, I am pursuing a Bachelor's degree in 
+                        Software Engineering. I am an excellent self-learner with efficient self management skills. In fact, 
+                        I wrote my first lines of code during primary school, learning from video tutorials, online webpages 
+                        and forums. Other skills I had managed to learn during that time were 3D modeling and animation, and,
+                         image and video editing. I love working on large projects, especially those for my community, and
+                        like working in a team of like minded people so that we can solve some of the communities most 
+                        challenging problems.
+                    </p>
+                </div> 
+
+                <img id="profile_photo" src="" alt="Profile image">
+
+                <div id="Details">
+                    <h3> Details </h3>
+                    <p class="detail_text"> 
+                        <b>Name:</b> <br>
+                        Ahmad Adam <br>
+                        <b>Location:</b> <br>
+                        Sydney, Australia <br>
+                        <b>Contact:</b> <br>
+                        <img class="contact_img" src="" alt="LinkedIn icon">
+                        <img class="contact_img" src="" alt="Facebook icon">
+                        <img class="contact_img" src="" alt="Gmail icon">
+                    </p>
+                </div> 
+
+            </section>
+
+            <section class="skills">
+                <h3> These are some of my technical skills: </h3>
+                <ul> 
+                    <li> Python </li>
+                    <li> Java </li>
+                    <li> C# </li>
+                    <li> Html </li>
+                    <li> Css </li>
+                    <li> JavaScript </li>
+                </ul>
+            </section>
         </main>
 
         <aside>
