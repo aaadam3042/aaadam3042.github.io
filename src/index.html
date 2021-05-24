@@ -52,7 +52,7 @@
 
                 <hr size="1" width="75%" color="grey" class="line"> 
 
-                <section id="profile_details">
+                <section class="sec_cols">
                     
                     <div id="about_me">
                         <h3> About me </h3>
@@ -67,22 +67,32 @@
                         </p>
                     </div> 
 
-                    <img id="profile_photo" src="images/LogoRotated.png" alt="Profile image" width=200px height=200px>
+                    <div id="profile_photo">
+                        <img src="images/LogoRotated.png" alt="Profile image" width=200px height=200px>
+                    </div>
 
                     <div id="details">
+                        <h3> About the Page </h3>
+                        <p class="about_text"> 
+                            This page was intially made from scratch with nothing but html and css. It was first created in early 2021.
+                        </p>
+                        <hr size="1" width="100%" color="grey" class="line"> 
                         <h3> Details </h3>
-                        <p class="detail_text"> 
-                            <b>Name:</b> <br>
+                        <p class="about_text"> 
+                            <b class="sub_title">Name:</b> <br>
                             Ahmad Adam <br>
-                            <b>Location:</b> <br>
+                            <b class="sub_title">Location:</b> <br>
                             Sydney, Australia <br>
-                            <b>Contact:</b> <br>
-                            <img class="contact_img" src="images/at-icon-transparent.png" alt="Email icon" width=39px>
-                            aaadam3042@gmail.com <br>
-                            <a href="https://au.linkedin.com/in/ahmad-adam-85b4421a1">
-                                <img class="contact_img" src="images/LI-In-Bug.png" alt="LinkedIn icon" width=45px>
-                                Ahmad Adam <br>
-                            </a>
+                            
+                            <b class="sub_title">Contact:</b> <br>
+                            <div class="contact">
+                                <img class="contact_img" src="images/at-icon-transparent.png" alt="Email icon" width=27px>
+                                <pre>  aaadam3042@gmail.com</pre><br>
+                            </div>
+                            <div class="contact">
+                                <a href="https://au.linkedin.com/in/ahmad-adam-85b4421a1"><img class="contact_img" src="images/LI-In-Bug.png" alt="LinkedIn icon" width=33px></a>
+                                <pre><a href="https://au.linkedin.com/in/ahmad-adam-85b4421a1" id="li_link"> Ahmad Adam</pre></a> <br>
+                            </div>
                             
                         </p>
                     </div> 
@@ -91,42 +101,89 @@
             </section>
 
             <section id="experience">
-
-                <div id="education">
-                    <h3> Education </h3>
-                    <h4> The University of Sydney </h4>
-                    Bachelor of Engineering (Software Engineering) <br>
-                    February 2020 - current <br>
+                <div>
+                    <h1 class="title"> Experience </h1>
+                    <hr size="1" width="75%" color="grey" class="line"> 
                 </div>
 
-                <div id="languages">
-                    <h3> Languages </h3>
-                    <ul> 
-                        <pre><li> English    ⭐⭐⭐⭐⭐ </li></pre>
-                        <pre><li> Arabic     ⭐⭐</li></pre>
-                    </ul>
-                </div>
+                <div class="sec_cols">
+                    <div class="col1_2">
+                        <div id="education">
+                            <h3> Education </h3>
+                            <h4> The University of Sydney </h4>
+                            Bachelor of Engineering (Software Engineering) <br>
+                            February 2020 - current <br>
+                        </div>
 
-                <div id="skills">
-                    <h3> Skills </h3>
-                    <ul> 
-                        <pre><li> Blender 3D ⭐⭐⭐⭐</li></pre>
-                        <pre><li> Python     ⭐⭐⭐⭐</li></pre>
-                        <pre><li> Java       ⭐⭐⭐⭐</li></pre>
-                        <pre><li> Python     ⭐⭐⭐⭐</li></pre>
-                        <pre><li> Unity3D    ⭐⭐⭐</li></pre>
-                        <pre><li> C          ⭐⭐⭐</li></pre>
-                        <pre><li> C#         ⭐⭐</li></pre>
-                        <pre><li> Html       ⭐⭐</li></pre>
-                        <pre><li> Css        ⭐⭐</li></pre>
-                        <pre><li> JavaScript ⭐</li></pre>
-                    </ul>
+                        <div id="hobbies">
+                            <h3> Hobbies </h3>
+                            <ul> 
+                                <pre><li> Programming </li></pre>
+                                <pre><li> Animations </li></pre>
+                                <pre><li> Video and PhotoEditing </li></pre>
+                                <pre><li> Electronics </li></pre>
+                            </ul>
+                        </div>
+
+                        <div id="languages">
+                            <h3> Languages </h3>
+                            <ul> 
+                                <pre><li> English    ⭐⭐⭐⭐⭐ </li></pre>
+                                <pre><li> Arabic     ⭐⭐</li></pre>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="col2_2">
+                        <div id="skills">
+                            <h3> Skills </h3>
+                            <ul> 
+                                <pre><li> Blender 3D ⭐⭐⭐⭐</li></pre>
+                                <pre><li> Python     ⭐⭐⭐⭐</li></pre>
+                                <pre><li> Java       ⭐⭐⭐⭐</li></pre>
+                                <pre><li> Python     ⭐⭐⭐⭐</li></pre>
+                                <pre><li> Unity3D    ⭐⭐⭐</li></pre>
+                                <pre><li> C          ⭐⭐⭐</li></pre>
+                                <pre><li> C#         ⭐⭐</li></pre>
+                                <pre><li> Html       ⭐⭐</li></pre>
+                                <pre><li> Css        ⭐⭐</li></pre>
+                                <pre><li> JavaScript ⭐</li></pre>
+                            </ul>
+                        </div>
+                    </div>
                 </div>
 
             </section>
 
             <section id="projects">
-                <h2> Projects </h2>
+                <div>
+                    <h1 class="title"> Projects </h1>
+                    <hr size="1" width="75%" color="grey" class="line"> 
+                </div>
+
+                <section class="single-body sec_cols">
+
+                    <div class="card col1_2" style="background-image: url('images/StoryOfIslam.jpg')">
+                        <div class="card-content">
+                            <h2 class="card-title"> The Story of Islam </h2>
+                            <h4 class="card-type"> Video </h4>
+                            <p class="card-info"> This was a trailer that I had made to advertise an event for a 
+                                local community organisation.</p>
+                            <a href="#" class="card-button"> Learn More </a>
+                        </div>
+                    </div>
+
+                    <div class="card col2_2" style="background-image: url('images/Banner.png')">
+                        <div class="card-content">
+                            <h2 class="card-title"> Placeholder </h2>
+                            <h4 class="card-type"> Code </h4>
+                            <p class="card-info"> Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam metus 
+                                tortor, tempus id convallis.</p>
+                            <a href="#" class="card-button"> Learn More </a>
+                        </div>
+                    </div>
+                </section>
+
             </section>
         </main>
 

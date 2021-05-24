@@ -13,6 +13,19 @@
     src: url(fonts/OpenSans-Regular.ttf);
 }
 
+@font-face {
+    font-family: OpenSansBold;
+    src: url(fonts/OpenSans-Bold.ttf);
+}
+
+h1, h2, h3, h4, h5 {
+    font-family: OpenSansBold;
+}
+
+p {
+    font-family: OpenSans;
+}
+
 body {
     margin: 0;
 }
@@ -101,18 +114,25 @@ h1 {
 
 .title {
     font-weight: bolder;
+    font-size: xx-large;
+    text-align: center;
 }
 
-#profile {
+.sub_title {
+    font-family: OpenSansBold;
+}
+
+#profile, #projects {
     padding-top: 1px;
     padding-bottom: 20px;
     margin-top: 0;
-    background-color: #EEE5E9;
+    background-color: #ffffff;
 }
 
 #short_intro {
     text-align: center;
     font-family: OpenSans;
+    font-size: 20px;
     
 }
 
@@ -123,25 +143,198 @@ h1 {
     padding-bottom: 0;
 }
 
-#profile_details {
+.sec_cols {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
     align-items: center;
+    flex-wrap: wrap;
+}
+
+.about_text {
+    line-height: 1.5;
+    font-family: OpenSans;
+    font-size: 15px;
 }
 
 #about_me {
-    margin-left: 50px;
-    flex: 1;
-    text-align: justify;
+    width: 30%;
+    margin-left: 13%;
+    margin-right: 30px;
+    flex: 2;
+    text-align: left;
 }
 
 #profile_photo {
+    width: 30%;
+    justify-content: center;
     flex: 1;
-    size: 25px 25px;
+    margin-right: 30px;
+    margin-left: 30px;
 }
 
 #details {
-    flex: 1;
-    margin-right: 50px;
+    width: 30%;
+    flex: 2;
+    margin-left: 30px;
+    margin-right: 13%;
+}
+
+.contact {
+    display: flex;
+    align-items: center;
+}
+
+#li_link {
+    text-decoration: none;
+}
+
+.col1_2 {
+    width: 30%;
+    margin-left: 13%;
+    margin-right: 30px;
+    flex: 2;
+    text-align: left;
+}
+
+.col2_2 {
+    width: 30%;
+    flex: 2;
+    margin-left: 30px;
+    margin-right: 13%;
+}
+
+#experience {
+    padding-top: 1px;
+    padding-bottom: 20px;
+    margin-top: 0;
+    background-color: #EEE5E9;
+}
+
+*, *::before, *::after {
+    box-sizing: border-box;
+}
+
+.single_body {
+    display: grid;
+    min-height: 100vh;
+    place-items: center;
+    line-height: 1.6;
+    background: #342e37;
+    font-family: OpenSans;
+    color: white;
+}
+
+.card {
+    margin-top: 20px;
+    margin-bottom: 20px;
+
+    color: #EEE5E9;
+    background-image: url(images/StoryOfIslam.jpg);
+    background-size: cover;
+    padding: 8rem 0 0;
+    max-width: 35ch;
+    border-radius: 0.5rem;
+    overflow: hidden;
+
+    transition: transform 500ms ease;
+}
+
+.card:hover, .card:focus-within {
+    transform: scale(1.05);
+}
+
+.card-content {
+    --padding: 1.5rem;
+    padding: var(--padding);
+    background: linear-gradient(hsl(0 0% 0% / 0),
+                                hsl(20 0% 0% / 0.3) 20%,
+                                hsl(0 0% 0% / 1)
+    );
+}
+
+.card:hover .card-content > *:not(.card-title, .card-type),
+.card:focus-within .card-content > *:not(.card-title, .card-type) {
+    opacity: 1;
+    transition-delay: 800ms;
+}
+
+.card-title {
+    position: relative;
+    width: max-content;
+}
+
+.card-title::after {
+    content: "";
+    position: absolute;
+    height: 4px;
+    left: calc(var(--padding) * -1);
+    bottom: -3px;
+    width: calc(100% + var(--padding));
+    background: hsl(142, 90%, 61%);
+    
+    transform-origin: left;
+    transition: transform 500ms ease;
+}
+
+.card:hover .card-title::after,
+.card:focus-within .card-title::after {
+    transform: scaleX(1);
+}
+
+.card-info {
+    color: rgb(255 255 255 / 0.8)
+}
+
+@media (hover) {
+    .card-content {
+        transform: translateY(50%);
+        transition: transform 500ms ease;
+    }
+    .card:hover .card-content, .card:focus-within .card-content {
+        transform: translateY(0);
+        transition-delay: 500ms;
+    }
+    
+    .card:focus-within .card-content {
+        transition-duration: 0ms;
+    }
+    
+    .card-content > *:not(.card-title, .card-type) {
+        opacity: 0;
+        transition: opacity 500ms linear;
+    }
+
+    .card-title::after {
+        transform: scaleX(0);
+    }
+}
+
+.card-button {
+    cursor: pointer;
+    display: inline-block;
+    text-decoration: none;
+    color: #342e37;
+    background-color: hsl(142, 90%, 61%);
+    padding: .53em 1.25em;
+    border-radius: 0.25em;
+}
+
+.card-button:hover, .card-button:focus {
+    background-color: #EEE5E9;
+}
+
+@media (prefers-reduced-motion: reduce) {
+    *, *::before, *::after{
+        animation-duration: 0.01ms
+        !important;
+        animation-iteration-count: 1
+        !important;
+        transition-duration: 0.01ms
+        !important;
+        scroll-behavior: auto 
+        !important;
+        transition-delay: 0ms 
+        !important;
+    }
 }
