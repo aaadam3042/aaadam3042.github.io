@@ -22,28 +22,34 @@
         <header>
             <nav role="navigation" aria-label="main menu"> 
                 <ul class="navbar"> 
-                    <li class="nav_button"> <a href="" class="nav_link"> Home </a></li>
+                    <li class="nav_button"> <a href="" class="nav_link" id="active_nav"> Home </a></li>
                     <li class="nav_button"> <a href="videos/" class="nav_link"> About me </a></li>
                     <li class="nav_button"> <a href="games/" class="nav_link"> Experience </a></li>
                     <li class="nav_button"> <a href="software/" class="nav_link"> Projects </a></li>
                 </ul>
             </nav> 
 
-            <span id="main_title">
-                <h3> Hey, I'm </h3>
-                <h1> Ahmad Adam </h1>
-            </span>
-            <img src = "images/Banner.png" id="banner" alt="Banner image">
+            <div id="banner_container">
+                <div class="layer">
+                    <span id="main_title">
+                        <h3 id="intro"> Hey, I'm </h3>
+                        <!-- <hr size="1" width="50%" color="white">  -->
+                        <h1 id="name_title"> Ahmad Adam </h1>
+                    </span>
+                </div>
+                
+                <!-- <img src = "images/Banner.png" id="banner" alt="Banner image"> -->
+            </div>
         </header>
 
         <main>
 
-            <span id="short_intro"> 
-                <h1> Who? </h1>
+            <div id="short_intro"> 
+                <h1 class="title"> Who? </h1>
                 <p> I'm a second year Software Engineering student.  </p>
-            </span>
+            </div>
 
-            <hr size="1" width="75%" color="grey"> 
+            <hr size="1" width="75%" color="grey" class="line"> 
 
             <section id="profile">
                 
@@ -118,19 +124,6 @@
             </section>
         </main>
 
-        <aside>
-            <h3>Send me an Email</h3>
-            <form action="success.html" method="get">  
-                <label>Name: <input name="name" type="text" placeholder="Full Name Here"></label>  
-                <label>Email: <input name="email" type="email" required placeholder="Email Address"></label>            
-                <label>Message: <textarea name="message" type="text" required placeholder="Type your message here" cols="30" rows="15"></textarea></label>
-                <button type="submit">Send Email</button>
-            </form>
-        </aside>
-
-        <footer>
-            <h3> Contact details </h3>
-        </footer>
     </body>
 
 </html>
