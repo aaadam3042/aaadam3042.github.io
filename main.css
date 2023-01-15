@@ -26,9 +26,13 @@ h1, h2, h3, h4, h5 {
     font-family: OpenSansBold;
 }
 
-p {
+p, li, pre>li {
     font-family: OpenSans;
     font-size: 18px;
+}
+
+pre>li {
+    list-style: none;
 }
 
 body {
@@ -73,6 +77,8 @@ body {
     padding: 14px 16px;
     text-decoration: none;
     background-color: #342e37;
+    font-family: OpenSans;
+    font-size: 13px;
 }
 
 .nav_link:hover {
@@ -272,7 +278,7 @@ h1 {
 }
 
 .card-space {
-    margin: auto 200px auto 200px;
+    margin: auto 250px auto 250px;
     display: flex;
     flex-flow: row wrap;
 
@@ -295,7 +301,6 @@ h1 {
     margin-right: 10px;
 
     color: #EEE5E9;
-    background-image: url(images/StoryOfIslam.jpg);
     background-size: cover;
     padding: 8rem 0 0;
     max-width: 35ch;
