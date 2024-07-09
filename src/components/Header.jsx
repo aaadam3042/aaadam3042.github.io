@@ -8,7 +8,7 @@ export function Header() {
     return(
     <>
         <Paper elevation={3} square sx={{bgcolor: 'black', position: "absolute", top: 0, left:0, right: 0, width: "100vw", height: "40vh" , alignContent: "center", justifyContent: "center", alignItems: "center", alignSelf: "center", justifyItems: "center"}}>
-          <Box position="absolute" top="0px" bottom="0px" left="0px" right="0px" zIndex={1} style={{backgroundImage:`url(${banner})`, backgroundPosition: "center", backgroundSize: "cover", filter: "blur(2px)"}} />
+          <Box position="absolute" top="0px" bottom="0px" left="0px" right="0px" zIndex={1} style={{backgroundImage:`url(${banner})`, backgroundPosition: "center", backgroundSize: "cover", filter: "blur(0px)"}} />
           <Stack direction="column" style={{position: "relative", zIndex: 3}} paddingTop={2}>
             <Typography fontFamily='AwalRamadhan' color="white" variant='h1' textAlign="center" alignSelf="center" justifySelf="center" zIndex={3}> Ahmad Adam </Typography>
             <Stack direction="row" position="relative" alignSelf="center" alignContent="center" >
