@@ -85,13 +85,13 @@ function App() {
     }
   };
 
-  const projectGallery = projects.map(project =>
+  const projectGallery = projects.map(project => 
     <>
     <Card>
       {project.title}
     </Card>
     </>
-  )
+)
 
   const gameGallery = projects.map(game =>
     <>
@@ -100,12 +100,6 @@ function App() {
     </Card>
     </>
   )
-
-  const csel = {
-    'react-multi-carousel-list': {
-      position: 'unset !important',
-    },
-  }
 
   return (
     <>
@@ -129,26 +123,32 @@ function App() {
                 </Typography>
             </Box>
 
-            <Box width='90vw' height={300} bgcolor='red'>
-            <a name='projects'></a>
-            <Carousel style={""}
-                swipeable={false}
-                draggable={false}
-                showDots={true}
-                responsive={responsive}
-                ssr={false} // means to render carousel on server-side.
-                infinite={true}
-                keyBoardControl={true}
-                customTransition="all .5"
-                transitionDuration={500}
-                containerClass="carousel-container"
-                removeArrowOnDeviceType={["tablet", "mobile"]}
-                dotListClass="custom-dot-list-style"
-                itemClass="carousel-item-padding-40-px"
-                renderDotsOutside>
-                {projectGallery}
-            </Carousel>
+            <Box width='90vw'>
+                <a name='projects'></a>
+                <Typography color='white' variant='h4'> Projects </Typography>
+                <Box width='100%' display="flex" justifyContent="center" my={1}>
+                    <Divider variant='middle' sx={{bgcolor: 'white', width: '60vw'}}></Divider>
+                </Box>
 
+                <Carousel style={""}
+                    swipeable={false}
+                    draggable={false}
+                    showDots={true}
+                    responsive={responsive}
+                    ssr={false} // means to render carousel on server-side.
+                    infinite={true}
+                    keyBoardControl={true}
+                    customTransition="all .5"
+                    transitionDuration={500}
+                    containerClass="carousel-container"
+                    removeArrowOnDeviceType={["tablet", "mobile"]}
+                    dotListClass="custom-dot-list-style"
+                    itemClass="carousel-item-padding-40-px"
+                    renderDotsOutside>
+                    {/* {projectGallery} */}
+                    <div> item1 </div>
+                    <div> item2 </div>
+                </Carousel>
             </Box>
 
         </Paper>
