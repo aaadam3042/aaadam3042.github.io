@@ -21,7 +21,7 @@ export function Header() {
             const speedFactor = scrollSpeed; // Adjust this factor to make the background scroll faster or slower
             const backgroundElement = document.getElementById('background-box');
             backgroundElement.style.backgroundPositionY = `${scrollPosition * speedFactor}px`;
-            console.log(scrollPosition)
+
             if (scrollPosition > 250) {
                 setShowButton(false)
             } else {
@@ -40,7 +40,7 @@ export function Header() {
             alignItems: "center", alignSelf: "center", justifyItems: "center"
             }}>
             <Box id="background-box" 
-                position="absolute" top="0px" bottom="0px" left="0px" right="0px" zIndex={1} 
+                position="absolute" top="0px" bottom="0px" left="0px" right="0px" zIndex={1}
                 style={{backgroundImage:`url(${banner})`, backgroundPosition: "center top", backgroundRepeat: "no-repeat",
                 backgroundSize: "300vh", backgroundAttachment: 'fixed', filter: "blur(0px)", willChange: 'transform'}
             } />
