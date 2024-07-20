@@ -117,7 +117,7 @@ function App() {
     <>
       <Box id="BasePage">
         <Header />
-        <Paper square elevation={5} sx={{width: '100vw', height: '100vh', top:0, left:0, right:0, bottom:0, 
+        <Paper square elevation={5} sx={{width: '100vw', height: 'auto', top:0, left:0, right:0, bottom:0, 
             margin:0, padding:0, marginTop: "100vh;", bgcolor: "#1a181b", display: 'flex', flexDirection: 'column',
             justifyContent:'start', alignItems:'center'
             }}>
@@ -149,6 +149,24 @@ function App() {
                     containerClass='container-style' itemClass='item-style' 
                     >
                         {projectGallery}
+                    </Carousel>
+                </Box>
+            </Box>
+
+            <Box width='90vw' sx={{class: 'CarouselContainer'}} display='flex' flexDirection='column' alignItems='center' my={10}>
+                <a name='projects'></a>
+                <Typography color='white' variant='h4'> Games </Typography>
+                <Box width='100%' display="flex" justifyContent="center" my={1} mb={4}>
+                    <Divider variant='middle' sx={{bgcolor: 'white', width: '60vw'}}></Divider>
+                </Box>
+
+                <Box width='100%'>
+                    <Carousel responsive={responsive}
+                    swipeable draggable infinite showDots 
+                    centerMode={isBigScreen} autoPlay={isBigScreen} autoPlaySpeed={5000}
+                    containerClass='container-style' itemClass='item-style' 
+                    >
+                        {gameGallery}
                     </Carousel>
                 </Box>
             </Box>

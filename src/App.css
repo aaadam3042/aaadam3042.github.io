@@ -17,11 +17,6 @@ html {
 }
 
 .cardSlide:hover {
-  transition: transform 500ms ease;
+  transition: transform 500ms ease-in-out;
   transform: scale(1.05);
 }
-
-.cardBgSlide:hover {
-  transition: ease-in 100ms;
-}
-

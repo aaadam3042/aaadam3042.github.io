@@ -1,10 +1,30 @@
-import { Box, Button, Card, CardContent, Chip, Typography } from '@mui/material'
+import { useRef, useEffect, useState } from 'react';
+import { Box, Button, Card, CardContent, Chip, Stack, Typography } from '@mui/material'
+import { styled } from '@mui/system'
 
 export function CarouselCard({ project }) {
+    const parentRef = useRef(null);
+    const childRef = useRef(null);
+    const [translateY, setTranslateY] = useState(0);
+
+    useEffect(() => {
+    if (parentRef.current && childRef.current) {
+        const parentHeight = parentRef.current.offsetTop;
+        const childHeight = childRef.current.offsetTop;
+        setTranslateY(parentHeight - childHeight + 335);
+    }
+    }, []);
+
+    const tags = project.tags.map(tag => 
+        <>
+        <Chip label={tag} size='small' color='warning' sx={{px: 1, mx: 0.5}} />
+        </>
+    )
+
     return(<>
     <Card className='cardSlide' sx={{height: '350px', mx: '20px', my: '10px', minWidth: '250px', borderRadius: '10px', 
         backgroundImage: `url(./src/assets/images/projects/${project.image ? project.image : "/Default.png"})`, backgroundSize: 'cover', backgroundPosition: 'center',
-        '&:hover .cardLine': {transform: 'scaleX(1.3)'}, '&:hover .cardContentSlide': {transform: 'translateY(1)'},
+        '&:hover .cardLine': {transform: 'scaleX(1.3)'}, '&:hover .cardContentSlide': {transform: 'translateY(0)'},
         position: 'relative', overflow: 'hidden'}}>
 
         <Box style={{
@@ -16,14 +36,16 @@ export function CarouselCard({ project }) {
             background: 'linear-gradient(rgba(255, 255, 255, 0.1), rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.7))', backdropFilter: 'blur(3px)', zIndex: 2}} 
             sx={{className: 'cardBgSlide', WebkitBackdropFilter: 'blur(3px)'}} />
 
-        <CardContent className='cardContentSlide' sx={{position: 'relative', height: 305, zIndex: 5, color: 'white', display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center', transform: 'translateY(60%)'}}>
+        <CardContent className='cardContentSlide' sx={{position: 'relative', height: 305, zIndex: 5, color: 'white', display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center', transform: `translateY(${translateY}px)`, transition: 'transform 350ms ease-in-out'}} ref={parentRef}>
             <Typography fontWeight='bold' fontSize='large'> {project.title} </Typography>
             <Box className='cardLine' height={5} width={150} borderRadius={2} bgcolor='#44df81' mb={1} 
                 sx={{transition: 'transform 500ms ease-in-out', transform: 'scaleX(0.5)',}} />
             <Typography fontStyle='italic'> {project.devDate} - {project.status} </Typography>
-            <Chip label="Tags" size='small' color='warning' sx={{px: 1,}} />
-            <Typography display='-webkit-box' sx={{WebkitLineClamp: 4, WebkitBoxOrient: 'vertical'}} textOverflow='ellipsis' overflow='hidden' py={2} maxHeight='9ch'> {project.description} </Typography>
-          <Button variant='outlined' sx={{borderColor: 'lightblue', color: 'lightblue'}}> More </Button> {/* Restrict size of description, add ..., full description in popup with links */}
+            <Stack  direction='row' overflow='hidden'>
+                {tags}
+            </Stack>
+            <Typography display='-webkit-box' sx={{WebkitLineClamp: 4, WebkitBoxOrient: 'vertical'}} textOverflow='ellipsis' overflow='hidden' py={2} maxHeight='9ch' ref={childRef}> {project.description} </Typography>
+            <Button variant='outlined' sx={{borderColor: 'lightblue', color: 'lightblue'}}> More </Button> {/* Restrict size of description, add ..., full description in popup with links */}
         </CardContent>
     </Card>
     </>);
