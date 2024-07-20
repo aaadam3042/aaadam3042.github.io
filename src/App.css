@@ -16,3 +16,12 @@ html {
   margin: 0 2rem;
 }
 
+.cardSlide:hover {
+  transition: transform 500ms ease;
+  transform: scale(1.05);
+}
+
+.cardBgSlide:hover {
+  transition: ease-in 100ms;
+}
+
