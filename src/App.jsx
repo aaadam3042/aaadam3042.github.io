@@ -2,6 +2,7 @@ import './App.css'
 import './assets/fonts/AwalFont.css'
 import { useMediaQuery } from 'react-responsive'
 import { AppBar, Box, Button, Container, Divider, Grid, Paper, Stack, Toolbar, Typography } from '@mui/material'
+import { Default, EyestrainManager, HFS, PersonalWebsite, PythonicHangman, RustyHangman } from './assets/images/projects'
 import Header from './components/Header'
 import CarouselCard from './components/CarouselCard'
 import Carousel from "react-multi-carousel";
@@ -16,7 +17,7 @@ function App() {
       platform: "desktop",
       description: "Terminal application to help manage eye strain while sitting at your computer. Essentially an alarm to help divide up eyesight sessions.",
       tags: ["python", "health"],
-      image: "/Eyestrain-manager.png",
+      image: EyestrainManager,
       githubURL: "https://github.com/aaadam3042/EyestrainManager.png",
       appURL: "",
       devDate: "2024",
@@ -27,18 +28,18 @@ function App() {
       platform: "Web",
       description: "You're looking at it right now. This website was created using React and MaterialUI",
       tags: ["Javascript", "React", "MaterialUI"],
-      image: "/Personal-website.png",
+      image: PersonalWebsite,
       githubURL: "https://github.com/aaadam3042/aaadam3042.github.io",
       appURL: "",
       devDate: "2024",
-      status:"Complete",
+      status:"Complete", 
     },
     {
       title: "Expense Tracker",
       platform: "IOS",
       description: "Mobile app to help track daily expenses.",
       tags: ["Swift", "SwiftUI"],
-      image: "",
+      image: Default,
       githubURL: "https://github.com/aaadam3042/Swift-Expense-Tracker",
       appURL: "",
       devDate: "2024",
@@ -49,7 +50,7 @@ function App() {
       platform: "Web",
       description: "Web application to find and search for Halal restaurants and butchers meeting a strict subset of rules.",
       tags: ["Javascript", "React", "Python", "Flask", "PostgreSQL"],
-      image: "/HFS.png",
+      image: HFS,
       githubURL: "https://github.com/aaadam3042/Halal-Food-Sydney-App",
       appURL: "",
       devDate: "2023",
@@ -63,7 +64,7 @@ function App() {
       platform: "desktop",
       description: "Classic hangman game implemented in Python.",
       tags: ["python", "game"],
-      image: "/Pythonic-hangman.png",
+      image: PythonicHangman,
       githubURL: "https://github.com/aaadam3042/Pythonic-Hangman",
       appURL: "",
       devDate: "2024",
@@ -74,7 +75,7 @@ function App() {
       platform: "macOS",
       description: "Classic hangman game implemented in Rust.",
       tags: ["Rust", "game"],
-      image: "/Rusty-Hangman.png",
+      image: RustyHangman,
       githubURL: "https://github.com/aaadam3042/rusty-hangman",
       appURL: "",
       devDate: "2024",

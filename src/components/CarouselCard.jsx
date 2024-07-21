@@ -1,11 +1,13 @@
 import { useRef, useEffect, useState } from 'react';
-import { Box, Button, Card, CardContent, Chip, Stack, Typography } from '@mui/material'
-import { styled } from '@mui/system'
+import { Box, Button, Card, CardContent, Chip, Dialog, Stack, Typography } from '@mui/material'
 
 export function CarouselCard({ project }) {
     const parentRef = useRef(null);
     const childRef = useRef(null);
     const [translateY, setTranslateY] = useState(0);
+    const [openCard, setOpenCard] = useState(false);
+
+    let gotOffset = false
 
     useEffect(() => {
     if (parentRef.current && childRef.current) {
@@ -21,20 +23,33 @@ export function CarouselCard({ project }) {
         </>
     )
 
+    const handleOpenCard = () => {
+        setOpenCard(true)
+    }
+    const handleCloseCard = () => {
+        setOpenCard(false)
+    }
+
     return(<>
+    <Dialog 
+        sx={{ color: '#fff', zIndex: (theme) => theme.zIndex.drawer + 1 }}
+        open={openCard}
+        onClick={handleCloseCard}>
+    </Dialog>
+
     <Card className='cardSlide' sx={{height: '350px', mx: '20px', my: '10px', minWidth: '250px', borderRadius: '10px', 
-        backgroundImage: `url(./src/assets/images/projects/${project.image ? project.image : "/Default.png"})`, backgroundSize: 'cover', backgroundPosition: 'center',
-        '&:hover .cardLine': {transform: 'scaleX(1.3)'}, '&:hover .cardContentSlide': {transform: 'translateY(0)'},
+        backgroundImage: `url(${project.image})`, backgroundSize: 'cover', backgroundPosition: 'center',
+        '&:hover .cardLine': {transform: 'scaleX(1.3)'}, '&:hover .cardContentSlide': {transform: 'translateY(0)'}, '&:hover .cardBgSlide': {transform: 'translateY(0)'},
         position: 'relative', overflow: 'hidden'}}>
 
         <Box style={{
             position: 'absolute', top: 0, right: 0, bottom: 0, left: 0,
-            backgroundColor: 'rgba(255, 255, 255, 0.1)', backdropFilter: 'blur(3px)', zIndex: 1,}} sx={{WebkitBackdropFilter: 'blur(3px)'}} />
+            backgroundColor: 'rgba(255, 255, 255, 0.1)', backdropFilter: 'blur(2px)', zIndex: 1,}} sx={{WebkitBackdropFilter: 'blur(2px)'}} />
 
-        <Box style={{
+        <Box className="cardBgSlide" style={{
             position: 'absolute', top: 0, right: 0, bottom: 0, left: 0,
             background: 'linear-gradient(rgba(255, 255, 255, 0.1), rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.7))', backdropFilter: 'blur(3px)', zIndex: 2}} 
-            sx={{className: 'cardBgSlide', WebkitBackdropFilter: 'blur(3px)'}} />
+            sx={{WebkitBackdropFilter: 'blur(3px)', transform: 'translateY(350px)', transition: 'transform 350ms ease-in-out'}} />
 
         <CardContent className='cardContentSlide' sx={{position: 'relative', height: 305, zIndex: 5, color: 'white', display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center', transform: `translateY(${translateY}px)`, transition: 'transform 350ms ease-in-out'}} ref={parentRef}>
             <Typography fontWeight='bold' fontSize='large'> {project.title} </Typography>
@@ -45,7 +60,8 @@ export function CarouselCard({ project }) {
                 {tags}
             </Stack>
             <Typography display='-webkit-box' sx={{WebkitLineClamp: 4, WebkitBoxOrient: 'vertical'}} textOverflow='ellipsis' overflow='hidden' py={2} maxHeight='9ch' ref={childRef}> {project.description} </Typography>
-            <Button variant='outlined' sx={{borderColor: 'lightblue', color: 'lightblue'}}> More </Button> {/* Restrict size of description, add ..., full description in popup with links */}
+            <Button variant='outlined' onClick={handleOpenCard} sx={{borderColor: 'lightblue', color: 'lightblue'}}> More </Button> 
+            {/* TODO: WHY IS THE THING STILL TO JUMPING UP WHEN CLOSING DIALOG??? Restrict size of description, add ..., full description in popup with links */}
         </CardContent>
     </Card>
     </>);
