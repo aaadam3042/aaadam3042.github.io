@@ -4,10 +4,9 @@ import { Box, Button, Card, CardContent, Chip, Dialog, Stack, Typography } from 
 export function CarouselCard({ project }) {
     const parentRef = useRef(null);
     const childRef = useRef(null);
+    const buttonRef = useRef(null);
     const [translateY, setTranslateY] = useState(0);
     const [openCard, setOpenCard] = useState(false);
-
-    let gotOffset = false
 
     useEffect(() => {
     if (parentRef.current && childRef.current) {
@@ -24,22 +23,25 @@ export function CarouselCard({ project }) {
     )
 
     const handleOpenCard = () => {
-        setOpenCard(true)
+        setOpenCard(true);
+        buttonRef.current.blur();
     }
+
     const handleCloseCard = () => {
         setOpenCard(false)
     }
 
     return(<>
     <Dialog 
-        sx={{ color: '#fff', zIndex: (theme) => theme.zIndex.drawer + 1 }}
+        sx={{ color: '#fff', zIndex: 10}}
         open={openCard}
         onClick={handleCloseCard}>
     </Dialog>
 
     <Card className='cardSlide' sx={{height: '350px', mx: '20px', my: '10px', minWidth: '250px', borderRadius: '10px', 
         backgroundImage: `url(${project.image})`, backgroundSize: 'cover', backgroundPosition: 'center',
-        '&:hover .cardLine': {transform: 'scaleX(1.3)'}, '&:hover .cardContentSlide': {transform: 'translateY(0)'}, '&:hover .cardBgSlide': {transform: 'translateY(0)'},
+        '&:hover .cardLine': {transform: 'scaleX(1.3)'}, '&:hover .cardContentSlide': {transform: 'translateY(0)'}, 
+        '&:hover .cardBgSlide': {transform: 'translateY(0)'}, ':focus-within .cardContentSlide': {},
         position: 'relative', overflow: 'hidden'}}>
 
         <Box style={{
@@ -60,8 +62,8 @@ export function CarouselCard({ project }) {
                 {tags}
             </Stack>
             <Typography display='-webkit-box' sx={{WebkitLineClamp: 4, WebkitBoxOrient: 'vertical'}} textOverflow='ellipsis' overflow='hidden' py={2} maxHeight='9ch' ref={childRef}> {project.description} </Typography>
-            <Button variant='outlined' onClick={handleOpenCard} sx={{borderColor: 'lightblue', color: 'lightblue'}}> More </Button> 
-            {/* TODO: WHY IS THE THING STILL TO JUMPING UP WHEN CLOSING DIALOG??? Restrict size of description, add ..., full description in popup with links */}
+            <Button variant='outlined' onClick={handleOpenCard} sx={{borderColor: 'lightblue', color: 'lightblue'}} ref={buttonRef}> More </Button> 
+            {/* TODO: full description in popup with links */}
         </CardContent>
     </Card>
     </>);
