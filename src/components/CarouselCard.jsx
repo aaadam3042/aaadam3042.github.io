@@ -46,11 +46,15 @@ export function CarouselCard({ project }) {
 
         <Box style={{
             position: 'absolute', top: 0, right: 0, bottom: 0, left: 0,
-            backgroundColor: 'rgba(255, 255, 255, 0.1)', backdropFilter: 'blur(2px)', zIndex: 1,}} sx={{WebkitBackdropFilter: 'blur(2px)'}} />
+            backgroundColor: 'rgba(255, 255, 255, 0.1)', zIndex: 1,}} />
+
+        <Box style={{
+            position: 'fixed', top: 0, right: 0, bottom: 0, left: 0,
+            backdropFilter: 'blur(1px)', zIndex: 2,}} sx={{WebkitBackdropFilter: 'blur(2px)'}} />
 
         <Box className="cardBgSlide" style={{
             position: 'absolute', top: 0, right: 0, bottom: 0, left: 0,
-            background: 'linear-gradient(rgba(255, 255, 255, 0.1), rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.7))', backdropFilter: 'blur(3px)', zIndex: 2}} 
+            background: 'linear-gradient(rgba(255, 255, 255, 0.1), rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.7))', backdropFilter: 'blur(3px)', zIndex: 3}} 
             sx={{WebkitBackdropFilter: 'blur(3px)', transform: 'translateY(350px)', transition: 'transform 350ms ease-in-out'}} />
 
         <CardContent className='cardContentSlide' sx={{position: 'relative', height: 305, zIndex: 5, color: 'white', display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center', transform: `translateY(${translateY}px)`, transition: 'transform 350ms ease-in-out'}} ref={parentRef}>
