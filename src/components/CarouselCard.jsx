@@ -36,8 +36,11 @@ export function CarouselCard({ project }) {
     <Dialog 
         sx={{ color: '#fff', zIndex: 10}}
         open={openCard}
-        onClose={handleCloseCard}>
-        <Card sx={{width: '40vw', height: '50vh'}}> 
+        onClose={handleCloseCard}
+        maxWidth="xl"
+        >
+
+        <Card sx={{maxWidth: '90vw', maxHeight: '90vh'}}> 
             <CardContent sx={{display: 'flex', flexDirection: 'column'}}>
                 <Stack direction='row' justifyContent='space-between' alignItems='start'>
                     <Typography variant='h4' mb={1}>
@@ -48,15 +51,15 @@ export function CarouselCard({ project }) {
                     </IconButton>
                 </Stack>
 
-                <Typography fontStyle='italic'>
+                <Typography fontStyle='italic' mx={1} mb={0.5}>
                     {project.devDate} - {project.status}
                 </Typography>
 
-                <Stack  direction='row' overflow='hidden'>
+                <Stack direction='row' overflow='hidden'>
                     {tags}
                 </Stack>
                 
-                <Typography my={2}>
+                <Typography my={2} mx={1} maxWidth={490}>
                     {project.description}
                 </Typography>
 
