@@ -2,7 +2,7 @@ import './App.css'
 import './assets/fonts/AwalFont.css'
 import { useMediaQuery } from 'react-responsive'
 import { AppBar, Box, Button, Container, Divider, Grid, Paper, Stack, Toolbar, Typography } from '@mui/material'
-import { Default, EyestrainManager, HFS, PersonalWebsite, PythonicHangman, RustyHangman } from './assets/images/projects'
+import { Default, EyestrainManager, HFS, PersonalWebsite, PythonicHangman, RustyHangman, IStrainManager } from './assets/images/projects'
 import Header from './components/Header'
 import CarouselCard from './components/CarouselCard'
 import Carousel from "react-multi-carousel";
@@ -35,15 +35,15 @@ function App() {
       status:"Complete", 
     },
     {
-      title: "Expense Tracker",
+      title: "IStrain Manager",
       platform: "IOS",
-      description: "Mobile app to help track daily expenses.",
+      description: "Mobile app to help manage eyesight while working.",
       tags: ["Swift", "SwiftUI"],
-      image: Default,
-      githubURL: "https://github.com/aaadam3042/Swift-Expense-Tracker",
+      image: IStrainManager,
+      githubURL: "https://github.com/aaadam3042/iStrain-Manager",
       appURL: "",
       devDate: "2024",
-      status:"Complete",
+      status:"In development",
     },
     {
       title: "Halal Food Sydney App",
